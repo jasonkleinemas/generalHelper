@@ -1,0 +1,17 @@
+/**************************************************************/
+/*                                                            */
+/*  Duplicate Files                                           */
+/*                                                            */
+/**************************************************************/
+PGM        PARM(&toLib &toObj &fromLib &FromObj)
+
+  DCL        VAR(&toLib)   TYPE(*CHAR) LEN(10)
+  DCL        VAR(&toObj)   TYPE(*CHAR) LEN(10)
+  DCL        VAR(&fromLib) TYPE(*CHAR) LEN(10)
+  DCL        VAR(&FromObj) TYPE(*CHAR) LEN(10)
+  
+  
+  CRTDUPOBJ  OBJ(&FromObj)   FROMLIB(&fromLib) OBJTYPE(*FILE) TOLIB(&toLib) NEWOBJ(&toObj)
+  MONMSG     MSGID(CPD2104 CPF2130)
+
+ENDPGM
